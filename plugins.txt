@@ -1,8 +1,8 @@
 ace-editor:latest
+ansicolor:latest
 antisamy-markup-formatter:latest
 ant:latest
 authentication-tokens:latest
-bouncycastle-api:latest
 branch-api:latest
 build-timeout:latest
 cloudbees-folder:latest
@@ -21,7 +21,6 @@ github:latest
 github-organization-folder:latest
 git:latest
 git-server:latest
-gradle:latest
 handlebars:latest
 icon-shim:latest
 jquery-detached:latest
@@ -50,10 +49,10 @@ plain-credentials:latest
 resource-disposer:latest
 scm-api:latest
 script-security:latest
+slack:latest
 ssh-credentials:latest
 ssh-slaves:latest
 structs:latest
-subversion:latest
 timestamper:latest
 token-macro:latest
 windows-slaves:latest
