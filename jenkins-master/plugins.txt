@@ -10,7 +10,7 @@ credentials-binding:latest
 credentials:latest
 display-url-api:latest
 docker-commons:latest
-docker-workflow:latest
+docker-workflow:1.9.1
 durable-task:latest
 email-ext:latest
 external-monitor-job:latest
@@ -21,8 +21,10 @@ github:latest
 github-organization-folder:latest
 git:latest
 git-server:latest
+gravatar:latest
 handlebars:latest
 icon-shim:latest
+jquery:latest
 jquery-detached:latest
 junit:latest
 ldap:latest
@@ -49,6 +51,7 @@ plain-credentials:latest
 resource-disposer:latest
 scm-api:latest
 script-security:latest
+simple-theme-plugin:latest
 slack:latest
 ssh-credentials:latest
 ssh-slaves:latest
