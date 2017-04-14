@@ -24,13 +24,21 @@ services:
       - composer
     working_dir: /var/jenkins_home
   composer:
+    container_name: composer
     restart: "no"
     image: composer/composer:1.2-php5-alpine
     volumes:
       - "jenkins-data:/var/jenkins_home"
+      - "composer-cache:/var/cache/composer"
+    environment:
+      - COMPOSER_CACHE_DIR=/var/cache/composer
     working_dir: /var/jenkins_home
 volumes:
   jenkins-data:
     driver: local-persist
     driver_opts:
       mountpoint: /var/jenkins_home
+  composer-cache:
+    driver: local-persist
+    driver_opts:
+      mountpoint: /var/cache/composer

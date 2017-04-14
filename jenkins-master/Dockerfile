@@ -41,6 +41,10 @@ ADD composer /usr/local/bin/composer
 RUN chmod a+x /usr/local/bin/composer && \
     chown jenkins:jenkins /usr/local/bin/composer
 
+# Provide a persistent composer cache location.
+RUN mkdir -p /var/cache/composer
+
+# Make jenkins the full owner.
 RUN chown -R jenkins:jenkins /var/jenkins_home
 
 #New to docker 1.12
