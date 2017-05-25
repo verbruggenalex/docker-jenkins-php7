@@ -36,19 +36,15 @@ RUN set -x \
 RUN groupadd -g 117 docker
 RUN gpasswd -a jenkins docker
 
-# Make composer service executable by other containers.
-ADD composer /usr/local/bin/composer
-RUN chmod a+x /usr/local/bin/composer && \
-    chown jenkins:jenkins /usr/local/bin/composer
+# Give jenkins access to apache
+RUN groupadd -g 48 apache
+RUN useradd  -u 48 -g 48 apache
+RUN gpasswd -a apache jenkins
 
 # Provide a persistent composer cache location.
 RUN mkdir -p /var/cache/composer
 
 # Make jenkins the full owner.
 RUN chown -R jenkins:jenkins /var/jenkins_home
-
-#New to docker 1.12
-HEALTHCHECK --interval=5s --timeout=3s --retries=3 \
-      CMD curl -f http://localhost:8080 || exit 1
 
 USER jenkins
