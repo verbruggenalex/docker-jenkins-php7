@@ -1,8 +1,5 @@
 health:
 	@echo "Jenkins Master : `/usr/bin/docker inspect --format '{{ .State.Status }}' jenkins-master`"
-#########################
-# Build and Start Jenkins
-#########################
 
 build:
 	@docker-compose build
@@ -18,9 +15,6 @@ status:
 
 logs:
 	@docker-compose logs
-###################
-# Cleanup
-###################
 
 clean:	stop
 	@docker-compose rm -f master
@@ -33,9 +27,6 @@ clean-images:
 
 clean-volumes:
 	@docker volume ls -qf "dangling=true" |xargs docker volume rm
-###################
-# Test
-###################
 
 test: health build start status clean clean-data
 

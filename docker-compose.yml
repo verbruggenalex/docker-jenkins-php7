@@ -5,7 +5,7 @@ services:
     build:
       context: jenkins-master
     container_name: jenkins-master
-    restart: unless-stopped
+    restart: always
     ports:
       - "50000:50000"
       - "2375:2375"
@@ -15,6 +15,8 @@ services:
       - "/usr/bin/docker:/usr/bin/docker"
       - "/usr/bin/docker-compose:/usr/bin/docker-compose"
       - "/etc/localtime:/etc/localtime:ro"
+      - "/usr/share/composer:/usr/share/composer"
+      - "/usr/share/platform:/usr/share/platform"
     env_file:
       - ./jenkins-master/jenkins.env
       - ./jenkins-master/java.env
@@ -24,8 +26,6 @@ services:
       timeout: 3s
       retries: 3
       test: ["CMD", "curl", "-f", "http://localhost:8080/securityRealm/finishLogin"]
-    links:
-      - composer:jenkins-composer
 
   nginx:
     build:
@@ -46,9 +46,7 @@ services:
     build:
       context: jenkins-composer
     container_name: jenkins-composer
-    restart: "no"
     volumes:
-      - "/var/jenkins_home:/var/jenkins_home"
       - "/var/cache/composer:/var/cache/composer"
       - "/usr/share/composer:/usr/share/composer"
     environment:

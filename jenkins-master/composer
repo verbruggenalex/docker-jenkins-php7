@@ -2,4 +2,10 @@
 
 export PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin
 echo "Current working directory: '"$(pwd)"'"
-docker run --rm -v $(pwd):/app -v /var/cache/composer:/var/cache/composer composer/composer:1.2-php5-alpine $@
+docker run \
+    --rm \
+    -w $(pwd) \
+    -v $(pwd):/$(pwd) \
+    -v /var/cache/composer:/var/cache/composer \
+    -v /usr/share/composer:/usr/share/composer \
+    dockerjenkinsphp7_composer $@
