@@ -1,15 +1,16 @@
 # FPFIS Jenkins Docker project
 
-This project serves as the FPFIS Continuous Integration to provide NextEuropa subsites with Quality Assurance.
+This project serves as the FPFIS Continuous Integration to provide NextEuropa subsites with Quality Assurance. It is especially constructed for [Subsite Starter Kit](https://github.com/ec-europa/ssk) support. And opensourced as the other NextEuropa projects we encourage our users to install and contribute to the project.
 
-It consists of a Docker image based on the [official jenkins docker image](https://github.com/jenkinsci/docker) extended with:
+## Installation requirements:
+- docker-ce
+- docker-compose
+- make
+
+## Components:
+- [official jenkins docker image](https://github.com/jenkinsci/docker)
 - php7.0 & composer
 - nginx reverse proxy
 - additional plugins
 - atlassian theme
 - docker in docker support
-
-Requirements for [Subsite Starter Kit](https://github.com/ec-europa/ssk) support:
-- run composer pre-docker (ssk installation)
-- run phing pre-docker (spawn environment)
-- run docker in docker (simulate EC server environment)
