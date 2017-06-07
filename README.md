@@ -13,5 +13,5 @@ This project serves as the FPFIS Continuous Integration platform to provide Qual
 - php7.0 & composer
 - nginx reverse proxy
 - additional plugins
-- atlassian theme
+- [atlassian theme](https://www.google.be/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwj5t8HK9qzUAhWLa1AKHdVkCUYQFggnMAA&url=https%3A%2F%2Fgithub.com%2Fdjonsson%2Fjenkins-atlassian-theme&usg=AFQjCNE984aPufod9B62j4uT6aELQp9Nmw&sig2=PZD4iCfbm0-uZ55jhlyjtA)
 - docker in docker support
