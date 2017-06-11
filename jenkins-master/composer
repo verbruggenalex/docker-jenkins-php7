@@ -8,4 +8,4 @@ docker run \
     -v $(pwd):/$(pwd) \
     -v /var/cache/composer:/var/cache/composer \
     -v /usr/share/composer:/usr/share/composer \
-    dockerjenkinsphp7_composer $@
+    dockerjenkins_composer $@
