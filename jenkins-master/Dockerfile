@@ -58,6 +58,6 @@ RUN chmod +x /usr/local/bin/composer
 RUN mkdir -p /var/cache/composer
 
 # Make jenkins the full owner.
-RUN chown -R jenkins:jenkins /var/jenkins_home
+RUN chown -R 1000:1000 var/jenkins_home
 
 USER jenkins

@@ -6,6 +6,9 @@ docker run \
     --rm \
     -w $(pwd) \
     -v $(pwd):/$(pwd) \
+    -v /tmp:/tmp \
+    -v /data/var/jenkins_home:/var/jenkins_home \
     -v /var/cache/composer:/var/cache/composer \
     -v /usr/share/composer:/usr/share/composer \
-    dockerjenkins_composer $@
+    -e "COMPOSER_CACHE_DIR=/var/cache/composer" \
+    jenkinsdocker_composer $@
